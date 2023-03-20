@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "pre_commit_hooks"
+version = "1.0.0"
+description = "Set of pre-commit hooks for Alpa repository"
+authors = ["Jiri Kyjovsky <j1.kyjovsky@gmail.com>"]
+maintainers = ["Jiří Kyjovský <j1.kyjovsky@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/alpa-team/pre-commit-hooks"
+repository = "https://github.com/alpa-team/pre-commit-hooks"
+exclude = ["test/"]
+
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+
+[tool.poetry.dev-dependencies]
+pytest = ">=7.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.poetry.scripts]
+check-packit-file = "pre_commit_hooks.check_packit_file:main"
