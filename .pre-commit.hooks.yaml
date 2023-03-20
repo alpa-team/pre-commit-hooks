@@ -1,0 +1,6 @@
+- id: check-packit-file
+  name: Check Packit configuration file
+  description: Check if your Packit configuration file in Alpa package is correct.
+  entry: check-packit-file
+  language: python
+  types: yaml
