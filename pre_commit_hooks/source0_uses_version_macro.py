@@ -38,7 +38,21 @@ def main() -> int:
     dest_path = f"/tmp/{uuid.uuid4()}.spec"
     copy2(str(spec_path), dest_path)
 
-    specfile = Specfile(Path(dest_path))
+    specfile = None
+    last_exc = Exception("Not able to set up specfile")
+    for _ in range(100):
+        # I gave up... it sometimes fail... see
+        # b01eb2d35525f70ddcedbb743237946a6bdfa2cf
+        try:
+            specfile = Specfile(Path(dest_path))
+            break
+        except Exception as exc:
+            last_exc = exc
+            print(f"Retrying to set up specfile: {exc}")
+
+    if specfile is None:
+        raise last_exc
+
     with specfile.sources() as sources:
         source0 = min(sources, key=lambda src: src.number)
 
