@@ -13,10 +13,10 @@ exclude = ["test/"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-packit = ">=0.65"
+packitos = ">=0.65"
 specfile = ">=0.13"
 alpa_conf = ">=0.4.0"
-alpa = ">=0.4.0"
+pyalpa = ">=0.4.0"
 
 
 [build-system]
