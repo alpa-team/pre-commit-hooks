@@ -12,11 +12,11 @@ exclude = ["test/"]
 
 
 [tool.poetry.dependencies]
-python = "^3.8"
-
-
-[tool.poetry.dev-dependencies]
-pytest = ">=7.0.0"
+python = "^3.9"
+packit = ">=0.65"
+specfile = ">=0.13"
+alpa_conf = ">=0.4.0"
+alpa = ">=0.4.0"
 
 
 [build-system]
@@ -26,3 +26,5 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
 check-packit-file = "pre_commit_hooks.check_packit_file:main"
+check-necessary-files = "pre_commit_hooks.check_necessary_files:main"
+source0-uses-version = "pre_commit_hooks.source0_uses_version:main"
