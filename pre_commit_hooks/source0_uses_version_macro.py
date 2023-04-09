@@ -38,7 +38,7 @@ def main() -> int:
     dest_path = f"/tmp/{uuid.uuid4()}.spec"
     copy2(str(spec_path), dest_path)
 
-    specfile = Specfile(dest_path)
+    specfile = Specfile(Path(dest_path))
     with specfile.sources() as sources:
         source0 = min(sources, key=lambda src: src.number)
 
