@@ -3,7 +3,7 @@
   description: Check if your Packit configuration file in Alpa package is correct.
   entry: check-packit-file
   language: python
-  types: yaml
+  types: [yaml]
 
 - id: check-necessary-files
   name: Check if all necessary files are present in repo
