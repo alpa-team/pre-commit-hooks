@@ -4,3 +4,15 @@
   entry: check-packit-file
   language: python
   types: yaml
+
+- id: check-necessary-files
+  name: Check if all necessary files are present in repo
+  description: Check if all necessary files are present in repo
+  entry: check-necessary-files
+  language: python
+
+- id: source0-uses-version-macro
+  name: Check if version is propagated via macros to source0
+  description: Check if version is propagated via macros to source0
+  entry: source0-uses-version-macro
+  language: python
