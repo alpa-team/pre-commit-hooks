@@ -2,13 +2,13 @@ import sys
 from os import getcwd
 from pathlib import Path
 
-from alpa.repository import LocalRepo
+from alpa.repository.branch import LocalRepoBranch
 from packit.api import PackitAPI
 from packit.exceptions import PackitConfigException
 
 
 def main() -> int:
-    git_root = LocalRepo(Path(getcwd())).get_git_root()
+    git_root = LocalRepoBranch(Path(getcwd())).git_root
     if git_root is None:
         print("This is a bare git repository!", file=sys.stderr)
         return 1

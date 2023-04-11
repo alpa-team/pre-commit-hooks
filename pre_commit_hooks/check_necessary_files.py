@@ -3,8 +3,8 @@ import sys
 from os import getcwd
 from pathlib import Path
 
-from alpa.repository import LocalRepo
-from alpa_conf import AlpaRepoConfig, MetadataConfig
+from alpa.config import AlpaRepoConfig, MetadataConfig
+from alpa.repository.branch import LocalRepoBranch
 from packit.config.package_config import find_packit_yaml
 from packit.exceptions import PackitConfigException
 
@@ -19,7 +19,7 @@ def _find_spec(cwd: Path) -> bool:
 
 def main() -> int:
     cwd = Path(getcwd())
-    git_root = LocalRepo(cwd).get_git_root()
+    git_root = LocalRepoBranch(cwd).git_root
 
     try:
         find_packit_yaml(git_root)
