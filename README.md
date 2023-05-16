@@ -24,5 +24,5 @@ Add this to your `.pre-commit-config.yaml` file in the git root:
   hooks:
     - id: check-necessary-files
     - id: check-packit-file
-    - id: source0-uses-version
+    - id: source0-uses-version-macro
 ```
