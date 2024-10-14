@@ -3,6 +3,7 @@ Ensure that source0 uses version macro.
 
 when version in spec file is changed -> it should be seen in source0
 """
+
 import sys
 import uuid
 from os import getcwd
