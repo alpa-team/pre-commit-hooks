@@ -3,6 +3,7 @@ Ensure that source0 uses version macro.
 
 when version in spec file is changed -> it should be seen in source0
 """
+
 import sys
 import uuid
 from os import getcwd
@@ -11,7 +12,6 @@ from shutil import copy2
 from typing import Optional
 
 from specfile import Specfile
-
 
 SPEC_ERR_MSG = (
     "No related macro with version in source0 found. Please use "
